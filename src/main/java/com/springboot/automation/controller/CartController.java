@@ -11,6 +11,7 @@ import com.springboot.automation.specification.Specifications;
 import com.springboot.automation.util.TestBase;
 import com.springboot.automation.util.TestUtil;
 import io.restassured.RestAssured;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;

@@ -64,7 +64,7 @@ public class ProductControllerTestClass extends TestBase {
     @Description("Delete product")
     public void TestCase_DeleteProduct_Success(){
 
-        DeleteProductResponse deleteProductResponse = productController.deleteProduct(Route.UPDATE_PRODUCT("1"));
+        DeleteProductResponse deleteProductResponse = productController.deleteProduct(Route.DELETE_PRODUCT("1"));
         Assertion.ResponseAssertion(deleteProductResponse.getId(), 1);
         Assertion.ResponseAssertion(deleteProductResponse.getBrand(), "Apple");
 

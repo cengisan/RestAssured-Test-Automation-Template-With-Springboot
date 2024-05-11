@@ -52,11 +52,15 @@ public class CartControllerTestClass extends TestBase {
     @Description("Add carts to a user with userID")
     public void TestCase_AddNewCartToUser_Success(){
 
-        AddNewCartRequest.Product product = new AddNewCartRequest.Product();
+        AddNewCartRequest.Product product1 = new AddNewCartRequest.Product();
+        AddNewCartRequest.Product product2 = new AddNewCartRequest.Product();
         ArrayList<AddNewCartRequest.Product> products = new ArrayList<>();
-        product.setId(1);
-        product.setQuantity(1);
-        products.add(product);
+        product1.setId(1);
+        product1.setQuantity(1);
+        products.add(product1);
+        product2.setId(50);
+        product2.setQuantity(2);
+        products.add(product2);
 
         AddNewCartRequest addNewCartRequest = new AddNewCartRequest();
         addNewCartRequest.setUserId(userId);

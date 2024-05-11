@@ -1,9 +1,10 @@
 package com.springboot.automation.model.response.product;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.ArrayList;
-import java.util.Date;
+
 
 @Data
 public class DeleteProductResponse {
@@ -18,6 +19,7 @@ public class DeleteProductResponse {
     private String category;
     private String thumbnail;
     private ArrayList<String> images;
+    @JsonProperty("isDeleted")
     private boolean isDeleted;
     private String deletedOn;
 }
