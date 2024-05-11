@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite">
+    <listeners >
+        <listener class-name = "com.springboot.automation.reporter.ExtentReporterListener"/>
+    </listeners>
+
+    <test name="RestAssured-Template-Test">
+        <classes>
+            <class name="com.springboot.automation.testclasses.AuthControllerTestClass"/>
+            <class name="com.springboot.automation.testclasses.CartControllerTestClass"/>
+            <class name="com.springboot.automation.testclasses.ProductControllerTestClass"/>
+        </classes>
+    </test>
+
+</suite>
