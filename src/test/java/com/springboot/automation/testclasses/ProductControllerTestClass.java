@@ -10,7 +10,7 @@ import com.springboot.automation.model.response.product.GetSingleProductResponse
 import com.springboot.automation.model.response.product.UpdateProductResponse;
 import com.springboot.automation.reporter.annotation.description.Description;
 import com.springboot.automation.reporter.annotation.link.Link;
-import com.springboot.automation.route.Route;
+import com.springboot.automation.route.ProductControllerRoute;
 import com.springboot.automation.util.TestBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,7 +30,7 @@ public class ProductControllerTestClass extends TestBase {
         AddNewProductRequest addNewProductRequest = new AddNewProductRequest();
         addNewProductRequest.setTitle("Pencil");
 
-        GetSingleProductResponse getSingleProductResponse = productController.getSingleProduct(Route.GET_PRODUCT("1"));
+        GetSingleProductResponse getSingleProductResponse = productController.getSingleProduct(ProductControllerRoute.GET_PRODUCT("1"));
         Assertion.ResponseAssertion(getSingleProductResponse.getId(),1);
         Assertion.ResponseAssertion(getSingleProductResponse.getBrand(),"Apple");
     }
@@ -43,7 +43,7 @@ public class ProductControllerTestClass extends TestBase {
         AddNewProductRequest addNewProductRequest = new AddNewProductRequest();
         addNewProductRequest.setTitle("Pencil");
 
-        AddNewProductResponse addNewProductResponse = productController.addNewProduct(Route.PRODUCTS_ADD, addNewProductRequest);
+        AddNewProductResponse addNewProductResponse = productController.addNewProduct(ProductControllerRoute.PRODUCTS_ADD, addNewProductRequest);
         Assertion.ResponseAssertion(addNewProductResponse.getTitle(), addNewProductRequest.getTitle());
     }
 
@@ -55,7 +55,7 @@ public class ProductControllerTestClass extends TestBase {
         UpdateProductRequest updateProductRequest = new UpdateProductRequest();
         updateProductRequest.setTitle("Book");
 
-        UpdateProductResponse updateProductResponse = productController.updateProduct(Route.UPDATE_PRODUCT("1"), updateProductRequest);
+        UpdateProductResponse updateProductResponse = productController.updateProduct(ProductControllerRoute.UPDATE_PRODUCT("1"), updateProductRequest);
         Assertion.ResponseAssertion(updateProductResponse.getTitle(), updateProductRequest.getTitle());
     }
 
@@ -64,7 +64,7 @@ public class ProductControllerTestClass extends TestBase {
     @Description("Delete product")
     public void TestCase_DeleteProduct_Success(){
 
-        DeleteProductResponse deleteProductResponse = productController.deleteProduct(Route.DELETE_PRODUCT("1"));
+        DeleteProductResponse deleteProductResponse = productController.deleteProduct(ProductControllerRoute.DELETE_PRODUCT("1"));
         Assertion.ResponseAssertion(deleteProductResponse.getId(), 1);
         Assertion.ResponseAssertion(deleteProductResponse.getBrand(), "Apple");
 

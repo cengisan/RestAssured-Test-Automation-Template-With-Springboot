@@ -13,7 +13,9 @@ import com.springboot.automation.model.response.cart.GetCartsOfUserResponse;
 import com.springboot.automation.model.response.cart.UpdateCartResponse;
 import com.springboot.automation.reporter.annotation.description.Description;
 import com.springboot.automation.reporter.annotation.link.Link;
-import com.springboot.automation.route.Route;
+import com.springboot.automation.route.AuthControllerRoute;
+import com.springboot.automation.route.CartControllerRoute;
+import com.springboot.automation.route.ProductControllerRoute;
 import com.springboot.automation.util.TestBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -40,10 +42,10 @@ public class CartControllerTestClass extends TestBase {
         authRequest.setPassword("0lelplR");
         authRequest.setExpiresInMins(30);
 
-        AuthResponse authenticateResponse = authController.AuthenticateWithUser(Route.AUTH_LOGIN, authRequest);
+        AuthResponse authenticateResponse = authController.AuthenticateWithUser(AuthControllerRoute.AUTH_LOGIN, authRequest);
         userId = authenticateResponse.getId();
 
-        GetCartsOfUserResponse getCartsOfUserResponse = cartController.getCartsOfUser(Route.CARTS_USER(String.valueOf(userId)));
+        GetCartsOfUserResponse getCartsOfUserResponse = cartController.getCartsOfUser(CartControllerRoute.CARTS_USER(String.valueOf(userId)));
         Assertion.NotNullAssertion(getCartsOfUserResponse.getCarts());
     }
 
@@ -66,7 +68,7 @@ public class CartControllerTestClass extends TestBase {
         addNewCartRequest.setUserId(userId);
         addNewCartRequest.setProducts(products);
 
-        AddNewCartResponse addNewCartResponse = cartController.addNewCartToUser(Route.CARTS_ADD, addNewCartRequest);
+        AddNewCartResponse addNewCartResponse = cartController.addNewCartToUser(CartControllerRoute.CARTS_ADD, addNewCartRequest);
         Assertion.NotNullAssertion(addNewCartResponse.getProducts());
     }
 
@@ -85,7 +87,7 @@ public class CartControllerTestClass extends TestBase {
         updateCartRequest.setMerge(true);
         updateCartRequest.setProducts(products);
 
-        UpdateCartResponse updateCartResponse = cartController.updateCart(Route.CARTS(String.valueOf(userId)), updateCartRequest);
+        UpdateCartResponse updateCartResponse = cartController.updateCart(CartControllerRoute.CARTS(String.valueOf(userId)), updateCartRequest);
         Assertion.NotNullAssertion(updateCartResponse.getProducts());
     }
 
@@ -94,7 +96,7 @@ public class CartControllerTestClass extends TestBase {
     @Description("Delete a user's cart with userID")
     public void TestCase_DeleteCart_Success(){
 
-        DeleteCartResponse deleteCartResponse = cartController.deleteCart(Route.DELETE_CART(String.valueOf(userId)));
+        DeleteCartResponse deleteCartResponse = cartController.deleteCart(CartControllerRoute.DELETE_CART(String.valueOf(userId)));
         Assertion.NotNullAssertion(deleteCartResponse.getProducts());
 
     }

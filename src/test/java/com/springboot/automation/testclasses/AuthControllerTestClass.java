@@ -8,7 +8,8 @@ import com.springboot.automation.model.response.auth.GetCurrentAuthUserResponse;
 import com.springboot.automation.model.response.auth.RefreshAuthSessionResponse;
 import com.springboot.automation.reporter.annotation.description.Description;
 import com.springboot.automation.reporter.annotation.link.Link;
-import com.springboot.automation.route.Route;
+import com.springboot.automation.route.AuthControllerRoute;
+import com.springboot.automation.route.ProductControllerRoute;
 import com.springboot.automation.util.TestBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,7 +35,7 @@ public class AuthControllerTestClass extends TestBase {
 		authRequest.setPassword("0lelplR");
 		authRequest.setExpiresInMins(30);
 
-		authResponse = authController.AuthenticateWithUser(Route.AUTH_LOGIN, authRequest);
+		authResponse = authController.AuthenticateWithUser(AuthControllerRoute.AUTH_LOGIN, authRequest);
 		Assertion.ResponseAssertion(authResponse.getFirstName(),"Jeanne");
 		Assertion.ResponseAssertion(authResponse.getLastName(),"Halvorson");
 		userId = authResponse.getId();
@@ -46,7 +47,7 @@ public class AuthControllerTestClass extends TestBase {
 	@Description("Get current authenticated user.")
 	public void TestCase_GetCurrentAuthUser_Success(){
 
-		GetCurrentAuthUserResponse getCurrentAuthUserResponse = authController.GetCurrentAuthUser(Route.AUTH_ME, token);
+		GetCurrentAuthUserResponse getCurrentAuthUserResponse = authController.GetCurrentAuthUser(AuthControllerRoute.AUTH_ME, token);
 		Assertion.ResponseAssertion(getCurrentAuthUserResponse.getId(), userId);
 		Assertion.NotNullAssertion(getCurrentAuthUserResponse.getBank());
 	}
@@ -56,7 +57,7 @@ public class AuthControllerTestClass extends TestBase {
 	@Description("Refresh authenticate token")
 	public void TestCase_RefreshAuthSession_Success(){
 
-		RefreshAuthSessionResponse refreshAuthSessionResponse = authController.RefreshAuthSession(Route.AUTH_REFRESH, token);
+		RefreshAuthSessionResponse refreshAuthSessionResponse = authController.RefreshAuthSession(AuthControllerRoute.AUTH_REFRESH, token);
 		Assertion.ResponseAssertion(refreshAuthSessionResponse.getId(), userId);
 		Assertion.ResponseAssertion(refreshAuthSessionResponse.getFirstName(), authResponse.getFirstName());
 		Assertion.ResponseAssertion(refreshAuthSessionResponse.getLastName(), authResponse.getLastName());
