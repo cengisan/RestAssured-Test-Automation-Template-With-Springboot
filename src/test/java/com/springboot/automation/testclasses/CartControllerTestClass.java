@@ -15,7 +15,6 @@ import com.springboot.automation.reporter.annotation.description.Description;
 import com.springboot.automation.reporter.annotation.link.Link;
 import com.springboot.automation.route.AuthControllerRoute;
 import com.springboot.automation.route.CartControllerRoute;
-import com.springboot.automation.route.ProductControllerRoute;
 import com.springboot.automation.util.TestBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
