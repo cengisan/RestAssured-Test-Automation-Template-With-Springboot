@@ -23,7 +23,7 @@ public class ProductControllerTestClass extends TestBase {
     ProductController productController;
 
     @Test(priority = 1)
-    @Link(url = "/products/1") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+    @Link(url = "products/1") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
     @Description("Get product by id")
     public void TestCase_GetSingleProduct_Success(){
 
@@ -36,7 +36,7 @@ public class ProductControllerTestClass extends TestBase {
     }
 
     @Test(priority = 2)
-    @Link(url = "/products/add") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+    @Link(url = "products/add") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
     @Description("Add new product")
     public void TestCase_AddNewProduct_Success(){
 

@@ -60,7 +60,7 @@ public class ProductController extends TestBase {
                 header("X-Transaction-Id", TestUtil.generateTransactionId()).
                 when().
                 body(requestBody).
-                post(path).
+                put(path).
                 then().spec(responseSpecification).
                 extract().
                 response();

@@ -25,7 +25,7 @@ public class AuthControllerTestClass extends TestBase {
 	String token;
 
 	@Test(priority = 1)
-	@Link(url = "/auth/login") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+	@Link(url = "auth/login") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
 	@Description("Authenticate with a user")
 	public void TestCase_AuthenticateWithUser_Success(){
 
@@ -42,7 +42,7 @@ public class AuthControllerTestClass extends TestBase {
 	}
 
 	@Test(priority = 2)
-	@Link(url = "/auth/me") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+	@Link(url = "auth/me") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
 	@Description("Get current authenticated user.")
 	public void TestCase_GetCurrentAuthUser_Success(){
 
@@ -52,7 +52,7 @@ public class AuthControllerTestClass extends TestBase {
 	}
 
 	@Test(priority = 3)
-	@Link(url = "/auth/refresh") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+	@Link(url = "auth/refresh") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
 	@Description("Refresh authenticate token")
 	public void TestCase_RefreshAuthSession_Success(){
 

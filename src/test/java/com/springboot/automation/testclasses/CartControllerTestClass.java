@@ -31,7 +31,7 @@ public class CartControllerTestClass extends TestBase {
     int userId;
 
     @Test(priority = 1)
-    @Link(url = "/carts/user/15") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+    @Link(url = "carts/user/15") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
     @Description("Get carts of a user with userID")
     public void TestCase_GetCartsOfUser_Success(){
 
@@ -48,7 +48,7 @@ public class CartControllerTestClass extends TestBase {
     }
 
     @Test(priority = 2)
-    @Link(url = "/carts/add") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+    @Link(url = "carts/add") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
     @Description("Add carts to a user with userID")
     public void TestCase_AddNewCartToUser_Success(){
 
@@ -71,7 +71,7 @@ public class CartControllerTestClass extends TestBase {
     }
 
     @Test(priority = 3)
-    @Link(url = "/carts") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+    @Link(url = "carts") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
     @Description("Update a user's cart with userID")
     public void TestCase_UpdateCart_Success(){
 
@@ -90,7 +90,7 @@ public class CartControllerTestClass extends TestBase {
     }
 
     @Test(priority = 4)
-    @Link(url = "/carts/add") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
+    @Link(url = "carts/add") // After replacing the url in the LinkProcessor class with the jira baseurl, it is sufficient to add the jira task number here. For example JIRA-1234.
     @Description("Delete a user's cart with userID")
     public void TestCase_DeleteCart_Success(){
 

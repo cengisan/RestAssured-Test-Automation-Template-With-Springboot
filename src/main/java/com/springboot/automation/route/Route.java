@@ -10,10 +10,10 @@ public class Route {
     }
     public static final String CARTS_ADD = "/carts/add";
     public static String CARTS (String userId){
-        return "carts/" + userId;
+        return "/carts/" + userId;
     }
     public static String DELETE_CART(String userId){
-        return "carts/" + userId;
+        return "/carts/" + userId;
     }
     public static final String GET_PRODUCT (String productId){
         return "/products/" + productId;
