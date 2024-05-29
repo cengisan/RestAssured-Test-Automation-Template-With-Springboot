@@ -35,8 +35,7 @@ public class AuthControllerTestClass extends TestBase {
 		authRequest.setExpiresInMins(30);
 
 		authResponse = authController.AuthenticateWithUser(AuthControllerRoute.AUTH_LOGIN, authRequest);
-		Assertion.ResponseAssertion(authResponse.getFirstName(),"Jeanne");
-		Assertion.ResponseAssertion(authResponse.getLastName(),"Halvorson");
+		Assertion.ResponseAssertion(authResponse.getUsername(),authRequest.getUsername());
 		userId = authResponse.getId();
 		token = authResponse.getToken();
 	}

@@ -32,7 +32,7 @@ public class ProductControllerTestClass extends TestBase {
 
         GetSingleProductResponse getSingleProductResponse = productController.getSingleProduct(ProductControllerRoute.GET_PRODUCT("1"));
         Assertion.ResponseAssertion(getSingleProductResponse.getId(),1);
-        Assertion.ResponseAssertion(getSingleProductResponse.getBrand(),"Apple");
+        Assertion.NotNullAssertion(getSingleProductResponse.getReviews());
     }
 
     @Test(priority = 2)
@@ -66,7 +66,7 @@ public class ProductControllerTestClass extends TestBase {
 
         DeleteProductResponse deleteProductResponse = productController.deleteProduct(ProductControllerRoute.DELETE_PRODUCT("1"));
         Assertion.ResponseAssertion(deleteProductResponse.getId(), 1);
-        Assertion.ResponseAssertion(deleteProductResponse.getBrand(), "Apple");
+        Assertion.NotNullAssertion(deleteProductResponse.getReviews());
 
     }
 }

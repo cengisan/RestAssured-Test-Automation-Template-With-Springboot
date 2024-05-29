@@ -165,12 +165,7 @@ public class ExtentReporterManager {
         ExtentReports extentReports = new ExtentReports();
         extentReports.attachReporter(htmlReporter);
 
-        extentReports.setSystemInfo("Test Coordinator", "Bilgütay Erdem");
-        extentReports.setSystemInfo("Test Engineer", "Orcun Sarman");
-        extentReports.setSystemInfo("Test Engineer", "Ahmet Emir Karakaş");
-        extentReports.setSystemInfo("Test Engineer", "Cengizhan Uzuner");
-        extentReports.setSystemInfo("Test Engineer", "Celal Can Şardan");
-        extentReports.setSystemInfo("Test Engineer", "Aslıhan Bala");
+        extentReports.setSystemInfo("Test Automation Engineer", "Cengizhan Uzuner");
 
         return extentReports;
     }

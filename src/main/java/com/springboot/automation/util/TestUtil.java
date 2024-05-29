@@ -18,7 +18,7 @@ public class TestUtil {
         try {
             return new ObjectMapper().readValue(response.getBody().asString(), responseClass);
         } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
         }
     }
 

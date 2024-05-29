@@ -1,9 +1,11 @@
 package com.springboot.automation.model.response.auth;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 
 @Data
+@JsonIgnoreProperties
 public class GetCurrentAuthUserResponse {
 
     private int id;
@@ -34,6 +36,7 @@ public class GetCurrentAuthUserResponse {
     private String ssn;
     private String userAgent;
     private Crypto crypto;
+    private String role;
 
     @Data
     public static class Address{
@@ -41,7 +44,9 @@ public class GetCurrentAuthUserResponse {
         private String city;
         private Coordinates coordinates;
         private String postalCode;
+        private String stateCode;
         private String state;
+        private String country;
     }
 
     @Data

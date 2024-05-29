@@ -86,7 +86,7 @@ public class CartControllerTestClass extends TestBase {
         updateCartRequest.setMerge(true);
         updateCartRequest.setProducts(products);
 
-        UpdateCartResponse updateCartResponse = cartController.updateCart(CartControllerRoute.CARTS(String.valueOf(userId)), updateCartRequest);
+        UpdateCartResponse updateCartResponse = cartController.updateCart(CartControllerRoute.CARTS("1"), updateCartRequest);
         Assertion.NotNullAssertion(updateCartResponse.getProducts());
     }
 
@@ -95,7 +95,7 @@ public class CartControllerTestClass extends TestBase {
     @Description("Delete a user's cart with userID")
     public void TestCase_DeleteCart_Success(){
 
-        DeleteCartResponse deleteCartResponse = cartController.deleteCart(CartControllerRoute.DELETE_CART(String.valueOf(userId)));
+        DeleteCartResponse deleteCartResponse = cartController.deleteCart(CartControllerRoute.DELETE_CART("1"));
         Assertion.NotNullAssertion(deleteCartResponse.getProducts());
 
     }

@@ -28,5 +28,6 @@ public class DeleteCartResponse {
         private double discountPercentage;
         private int discountedPrice;
         private String thumbnail;
+        private String discountedTotal;
     }
 }
