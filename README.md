@@ -50,10 +50,8 @@ Springboot ve Rest Assured teknolojilerini birlikte kullanarak object oriented b
 
 **Rest Assured ile Test Otomasyon Koşumu**
 
-![Uygulama Ekran Görüntüsü](![image](https://github.com/cengisan/RestAssured-Test-Automation-Template-With-Springboot/assets/77883086/f6dd20bf-c013-4c5e-ba38-b0ed7ea012a2)
-)
+![image](https://github.com/cengisan/RestAssured-Test-Automation-Template-With-Springboot/assets/77883086/f6dd20bf-c013-4c5e-ba38-b0ed7ea012a2)
 
 **Extent Reporter İle Raporlama**
 
-![Uygulama Ekran Görüntüsü](![image](https://github.com/cengisan/RestAssured-Test-Automation-Template-With-Springboot/assets/77883086/ffa4cdee-a6b8-4b7a-b790-94f95f2eb12d)
-)
+![image](https://github.com/cengisan/RestAssured-Test-Automation-Template-With-Springboot/assets/77883086/ffa4cdee-a6b8-4b7a-b790-94f95f2eb12d)
